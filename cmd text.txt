@@ -1,0 +1,113 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| college            |
+| company            |
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE mydb;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> use my db;
+ERROR 1049 (42000): Unknown database 'my'
+mysql> use mydb;
+Database changed
+mysql> CREATE TABLE students(
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(225) NOT NULL,
+    -> age INT NOT NULL,
+    -> marks DOUBLE NOT NULL
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> describe students;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(225) | NO   |     | NULL    |                |
+| age   | int          | NO   |     | NULL    |                |
+| marks | double       | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO students(name , age,marks) VALUES("ALI",19,98.99);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from students;
++----+------+-----+-------+
+| id | name | age | marks |
++----+------+-----+-------+
+|  1 | ALI  |  19 | 98.99 |
++----+------+-----+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from students;
++----+--------+-----+-------+
+| id | name   | age | marks |
++----+--------+-----+-------+
+|  1 | ALI    |  19 | 98.99 |
+|  2 | AKHTAR |  25 |  85.7 |
++----+--------+-----+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from students;
++----+--------+-----+-------+
+| id | name   | age | marks |
++----+--------+-----+-------+
+|  1 | ALI    |  19 |  92.8 |
+|  2 | AKHTAR |  25 |  92.8 |
++----+--------+-----+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from students;
++----+--------+-----+-------+
+| id | name   | age | marks |
++----+--------+-----+-------+
+|  1 | ALI    |  19 |  92.8 |
+|  2 | AKHTAR |  25 |  92.8 |
++----+--------+-----+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from students;
++----+--------+-----+-------+
+| id | name   | age | marks |
++----+--------+-----+-------+
+|  1 | ALI    |  19 |  92.8 |
+|  2 | AKHTAR |  25 |  92.8 |
++----+--------+-----+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from students;
++----+--------+-----+-------+
+| id | name   | age | marks |
++----+--------+-----+-------+
+|  1 | ALI    |  19 | 98.99 |
+|  2 | AKHTAR |  25 | 98.99 |
++----+--------+-----+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from students;
++----+--------+-----+-------+
+| id | name   | age | marks |
++----+--------+-----+-------+
+|  1 | ALI    |  19 | 98.99 |
+|  2 | AKHTAR |  25 | 92.45 |
++----+--------+-----+-------+
+2 rows in set (0.00 sec)
+
+mysql>  select * from students;
++----+------+-----+-------+
+| id | name | age | marks |
++----+------+-----+-------+
+|  1 | ALI  |  19 | 98.99 |
++----+------+-----+-------+
+1 row in set (0.00 sec)
+
+
+
